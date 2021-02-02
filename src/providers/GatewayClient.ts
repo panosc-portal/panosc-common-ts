@@ -1,12 +1,10 @@
 import { bind, BindingScope, inject, Context, Provider } from '@loopback/core';
-import { RestBindings, Request, param } from '@loopback/rest';
-import Axios, { AxiosInstance, AxiosRequestConfig } from 'axios';
+import { RestBindings, Request } from '@loopback/rest';
+import Axios, { AxiosInstance } from 'axios';
 
 
 @bind({ scope: BindingScope.TRANSIENT })
 export class GatewayClient implements Provider<AxiosInstance> {
-
-    private _axiosInstance: AxiosInstance;
 
     constructor(
         @inject(RestBindings.Http.REQUEST) private request: Request

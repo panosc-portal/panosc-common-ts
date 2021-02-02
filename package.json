@@ -39,19 +39,16 @@
     "src",
     "!*/__tests__"
   ],
-  "peerDependencies": {
-    "@loopback/core": "^2.14.0"
-  },
   "dependencies": {
     "@loopback/repository": "^1.19.1",
     "@loopback/rest": "^2.0.0",
+    "@loopback/core": "^1.12.4",
     "axios": "^0.21.1",
     "tslib": "^2.0.0"
   },
   "devDependencies": {
     "@loopback/build": "^6.2.9",
     "source-map-support": "^0.5.19",
-    "@loopback/core": "^2.14.0",
     "@loopback/testlab": "^3.2.11",
     "@types/node": "^10.17.51",
     "@loopback/eslint-config": "^10.0.5",

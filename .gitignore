@@ -58,7 +58,8 @@ typings/
 .env
 
 # Transpiled JavaScript files from Typescript
-/dist
+# We need to distribute compiled code to avoid publishing on NPM
+#/dist
 
 # Cache used by TypeScript's incremental build
 *.tsbuildinfo

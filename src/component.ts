@@ -1,6 +1,6 @@
 import {
   Application,
-  injectable,
+  bind,
   Component,
   config,
   ContextTags,
@@ -13,7 +13,7 @@ import { GatewayClient } from './providers/GatewayClient';
 import {DEFAULT_PANOSC_COMMON_TS_OPTIONS, PanoscCommonTsComponentOptions} from './types';
 
 // Configure the binding for PanoscCommonTsComponent
-@injectable({tags: {[ContextTags.KEY]: PanoscCommonTsComponentBindings.COMPONENT}})
+@bind({tags: {[ContextTags.KEY]: PanoscCommonTsComponentBindings.COMPONENT}})
 export class PanoscCommonTsComponent implements Component {
   providers?: ProviderMap = {[PanoscCommonTsComponentBindings.GATEWAY_CLIENT.key]: GatewayClient};
 
