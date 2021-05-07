@@ -28,7 +28,7 @@ class ConsoleLogger {
         this._logger.warn(message);
     }
     async error(message, exception) {
-        this._logger.error(message + (exception ? 'n' + exception : ''));
+        this._logger.error(message + (exception ? '\n' + exception : ''));
     }
 }
 exports.ConsoleLogger = ConsoleLogger;

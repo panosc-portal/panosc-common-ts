@@ -38,7 +38,7 @@ export class ConsoleLogger implements ILogger {
   }
 
   async error(message: string, exception?: string) {
-    this._logger.error(message + (exception ? 'n' + exception : ''));
+    this._logger.error(message + (exception ? '\n' + exception : ''));
   }
 }
 
