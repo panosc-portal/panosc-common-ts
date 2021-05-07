@@ -6,16 +6,20 @@ import {
   ContextTags,
   CoreBindings,
   inject,
-  ProviderMap,
+  ProviderMap
 } from '@loopback/core';
-import {PanoscCommonTsComponentBindings} from './keys'
-import { GatewayClient } from './providers/GatewayClient';
+import {PanoscCommonTsComponentBindings} from './keys';
+import {GatewayClient} from './providers/GatewayClient';
+import {LoggerProvider} from './providers/logger.provider';
 import {DEFAULT_PANOSC_COMMON_TS_OPTIONS, PanoscCommonTsComponentOptions} from './types';
 
 // Configure the binding for PanoscCommonTsComponent
 @bind({tags: {[ContextTags.KEY]: PanoscCommonTsComponentBindings.COMPONENT}})
 export class PanoscCommonTsComponent implements Component {
-  providers?: ProviderMap = {[PanoscCommonTsComponentBindings.GATEWAY_CLIENT.key]: GatewayClient};
+  providers?: ProviderMap = {
+    [PanoscCommonTsComponentBindings.GATEWAY_CLIENT.key]: GatewayClient,
+    [PanoscCommonTsComponentBindings.LOGGER.key]: LoggerProvider
+  };
 
   constructor(
     @inject(CoreBindings.APPLICATION_INSTANCE)
@@ -25,3 +29,4 @@ export class PanoscCommonTsComponent implements Component {
   ) {
   }
 }
+

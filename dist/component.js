@@ -5,13 +5,17 @@ const tslib_1 = require("tslib");
 const core_1 = require("@loopback/core");
 const keys_1 = require("./keys");
 const GatewayClient_1 = require("./providers/GatewayClient");
+const logger_provider_1 = require("./providers/logger.provider");
 const types_1 = require("./types");
 // Configure the binding for PanoscCommonTsComponent
 let PanoscCommonTsComponent = class PanoscCommonTsComponent {
     constructor(application, options = types_1.DEFAULT_PANOSC_COMMON_TS_OPTIONS) {
         this.application = application;
         this.options = options;
-        this.providers = { [keys_1.PanoscCommonTsComponentBindings.GATEWAY_CLIENT.key]: GatewayClient_1.GatewayClient };
+        this.providers = {
+            [keys_1.PanoscCommonTsComponentBindings.GATEWAY_CLIENT.key]: GatewayClient_1.GatewayClient,
+            [keys_1.PanoscCommonTsComponentBindings.LOGGER.key]: logger_provider_1.LoggerProvider
+        };
     }
 };
 PanoscCommonTsComponent = tslib_1.__decorate([

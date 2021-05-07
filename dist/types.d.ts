@@ -2,6 +2,9 @@
 * Interface defining the component's options object
 */
 export interface PanoscCommonTsComponentOptions {
+    defaultGatewayHost?: string;
+    applicationName: string;
+    consoleLoggerThreshold: string;
 }
 /**
 * Default options for the component
